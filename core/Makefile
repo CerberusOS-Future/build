@@ -3212,6 +3212,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 cerberus: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CERBERUS_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CERBERUS_TARGET_PACKAGE) > $(CERBERUS_TARGET_PACKAGE).md5sum
+	$(hide) ./build/tools/generate_json_build_info.sh $(CERBERUS_TARGET_PACKAGE)
 	echo -e ${CL_BLUE}""${CL_BLUE}
 	echo -e ${CL_RED}"************************************************"${CL_RED}
 	echo -e ${CL_RED}"   ▄████▄  ▒█████    ██████  ██▓███   ▄▄▄       "${CL_RED}
