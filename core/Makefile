@@ -3227,7 +3227,7 @@ cerberus: otapackage
 	echo -e ${CL_RED}"************************************************"${CL_RED}
 	echo -e ${CL_RED}"                    CERBERUS OS                 "${CL_RED}
 	echo -e ${CL_RED}"************************************************"${CL_RED}
-        echo -e ${CL_RED}""${CL_RED}
+
 	@echo -e "Package complete: $(CERBERUS_TARGET_PACKAGE)"
 
 endif    # build_ota_package
