@@ -3213,7 +3213,7 @@ cerberus: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CERBERUS_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CERBERUS_TARGET_PACKAGE) > $(CERBERUS_TARGET_PACKAGE).md5sum
 	$(hide) ./build/tools/generate_json_build_info.sh $(CERBERUS_TARGET_PACKAGE)
-	echo -e ${CL_BLUE}""${CL_BLUE}
+	echo -e ${CL_RED}""${CL_RED}
 	echo -e ${CL_RED}"************************************************"${CL_RED}
 	echo -e ${CL_RED}"   ▄████▄  ▒█████    ██████  ██▓███   ▄▄▄       "${CL_RED}
 	echo -e ${CL_RED}"  ▒██▀ ▀█ ▒██▒  ██▒▒██    ▒ ▓██░  ██▒▒████▄     "${CL_RED}
@@ -3228,8 +3228,13 @@ cerberus: otapackage
 	echo -e ${CL_RED}"************************************************"${CL_RED}
 	echo -e ${CL_RED}"                    CERBERUS OS                 "${CL_RED}
 	echo -e ${CL_RED}"************************************************"${CL_RED}
+	echo -e ${CL_RED}""${CL_RED}
+	echo -e ${CL_RED}"===================================================-Package complete-===================================================="${CL_RST}
+	echo -e ${CL_RED}"  File       : "${CL_MAG} $(PRODUCT_OUT)/$(CERBERUS_VERSION).zip${CL_RST}
+	echo -e ${CL_RED}"  MD5        : "${CL_MAG}" `cat $(CERBERUS_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	echo -e ${CL_RED}"  Size       : "${CL_MAG}" `ls -lah $(CERBERUS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	echo -e ${CL_RED}"========================================================================================================================="${CL_RST}
 
-	@echo -e "Package complete: $(CERBERUS_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
