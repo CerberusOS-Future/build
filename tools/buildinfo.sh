@@ -61,7 +61,7 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
-echo "ro.cerberus.device=$cerberus_DEVICE"
+echo "ro.cerberus.device=$CERBERUS_DEVICE"
 
 echo "# end build properties"
 
